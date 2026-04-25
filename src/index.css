@@ -1,0 +1,70 @@
+/* ✅ ALL IMPORTS AT TOP */
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600&family=Cinzel:wght@400&display=swap');
+
+/* ===== THEME COLORS ===== */
+@theme {
+  --color-royal-plum: #5D1824;
+  --color-raw-silk: #F5F2EB;
+  --color-zari-gold: #D4AF37;
+  --color-silk-border: #E5E0D8;
+}
+
+/* ---- BASE STYLES ---- */
+@layer base {
+  body {
+    font-family: "Manrope", sans-serif;
+    background-color: var(--color-raw-silk);
+    color: #2A2A2A;
+    @apply antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Playfair Display", serif;
+    letter-spacing: -0.02em;
+  }
+
+  * {
+    border-color: var(--color-silk-border);
+  }
+}
+
+/* ---- UTILITIES ---- */
+@layer utilities {
+  .fabric-texture {
+    background-image: url("data:image/svg+xml,%3Csvg...");
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(90deg, #D4AF37 0%, #F4E9D4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* ---- YOUR CUSTOM CSS ---- */
+
+.App {
+  min-height: 100vh;
+}
+
+button, a, .card {
+  transition-property: background-color, border-color, box-shadow, transform;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.product-card:hover {
+  box-shadow: 0 10px 30px -4px rgba(93, 24, 36, 0.12);
+  transform: translateY(-2px);
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #D4AF37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
